@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Улыбнись, тётя!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Улыбнись, тёть, заебала _)__</h1>
+        <div class="buttons">
+            <button onclick="redirect()">ЛаднА</button>
+            <button id="noBtn">Нет, будешь ща лизать мне (</button>
+        </div>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById('noBtn');
+        
+        noBtn.addEventListener('mouseover', () => {
+            noBtn.style.transform = `translate(
+                ${Math.random() * 200 - 100}px,
+                ${Math.random() * 200 - 100}px
+            )`;
+            noBtn.style.transition = 'all 0.4s ease';
+        });
+
+        function redirect() {
+            window.location.href = 'second.html';
+        }
+
+        noBtn.addEventListener('click', redirect);
+    </script>
+</body>
+</html>

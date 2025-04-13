@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+/* Контейнеры */
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 600px;
+    margin: 50px auto;
+    transition: all 0.3s ease;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
+
+/* Видео-фон */
+#video-bg {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    transition: opacity 1.5s ease;
+}
+
+/* Текст */
+h1 {
+    color: #2A0944;
+    font-size: 2.5em;
+    margin: 0 0 1em 0;
+}
+
+.congrats {
+    font-size: 2.5em;
+    color: #2A0944;
+    text-align: center;
+    line-height: 1.4;
+    animation: float 3s ease-in-out infinite;
+    margin: 0;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Кнопки */
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #2A0944;
+    color: white;
+    min-width: 120px;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.music-btn {
+    background-color: #5e35b1;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    font-size: 1.2em;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.music-btn:hover {
+    background-color: #4527a0;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Аудио элемент (скрыт) */
+audio {
+    display: none;
+}

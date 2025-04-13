@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Молодец!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Видео изначально остановлено -->
+    <video id="video-bg" muted loop>
+        <source src="your-video.mp4" type="video/mp4">
+    </video>
+    
+    <div class="container center">
+        <h1 class="congrats">Ты всё равно пиздатая 😊</h1>
+        <audio id="bg-music" loop>
+            <source src="your-music.mp3" type="audio/mpeg">
+        </audio>
+        <button id="play-btn" class="music-btn">- Уши</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('bg-music');
+            const video = document.getElementById('video-bg');
+            const playBtn = document.getElementById('play-btn');
+            
+            // Обработчик кнопки
+            playBtn.addEventListener('click', () => {
+                // Запускаем видео
+                video.play();
+                
+                // Пытаемся запустить аудио
+                audio.play().then(() => {
+                    playBtn.textContent = '🔊 Видео и звук включены';
+                    playBtn.style.display = 'none';
+                }).catch(e => {
+                    playBtn.textContent = '❌ Разрешите звук в браузере';
+                    console.error("Ошибка воспроизведения:", e);
+                });
+            });
+            
+            // Показываем кнопку, если видео не может автостартовать
+            video.play().catch(e => {
+                playBtn.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
